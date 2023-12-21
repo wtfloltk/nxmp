@@ -1,0 +1,29 @@
+name: Makefile CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    container: devkitpro/devkita64:latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: make clean
+      run: |
+        make clean 
+
+    - name: final
+      run: | 
+        make
+      
+    - uses: actions/upload-artifact@master
+      with:
+        name: nxmp
+        path: build
