@@ -17,6 +17,7 @@ jobs:
 
     - name: dependencies
       run: |
+        export CC=cc
         dkp-pacman -S switch-dev --noconfirm
         git config --global --add safe.directory /__w/nxmp/nxmp
         git submodule update --init --recursive
