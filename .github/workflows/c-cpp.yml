@@ -20,6 +20,9 @@ jobs:
         dkp-pacman -S switch-dev --noconfirm
         git config --global --add safe.directory /__w/nxmp/nxmp
         git submodule update --init --recursive
+        git clone --recursive https://github.com/sahlberg/libnfs.git
+        cd libnfs && make install
+        cd ..
 
     - name: make clean
       run: |
