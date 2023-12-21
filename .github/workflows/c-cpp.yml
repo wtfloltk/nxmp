@@ -24,8 +24,7 @@ jobs:
         git config --global --add safe.directory /__w/nxmp/nxmp
         git submodule update --init --recursive
         git clone --recursive https://github.com/sahlberg/libnfs.git libs/libnfs
-        (cd libs/libnfs/ && cmake . && make && make install); cd ../../
-        ls include/
+        (cd libs/libnfs/ && cmake . && make && make install)
 
     - name: make clean
       run: |
