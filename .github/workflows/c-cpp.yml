@@ -17,6 +17,7 @@ jobs:
 
     - name: dependencies
       run: |
+        apt install gcc
         export CC=gcc
         dkp-pacman -S switch-dev --noconfirm
         git config --global --add safe.directory /__w/nxmp/nxmp
