@@ -17,6 +17,7 @@ jobs:
 
     - name: dependencies
       run: |
+        git config --global --add safe.directory /__w/nxmp/nxmp
         git submodule update --init --recursive
 
     - name: make clean
