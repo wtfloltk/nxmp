@@ -17,6 +17,7 @@ jobs:
 
     - name: dependencies
       run: |
+        apt update
         apt install gcc -y
         export CC=gcc
         dkp-pacman -S switch-dev --noconfirm
